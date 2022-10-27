@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="content-loader">
-    	<img src="/logo.png" draggable="false" alt="" />
+    	<img src="../static/logo.png" draggable="false" alt="" />
     </div>
     <div class="content-mask">
     </div>
     <div class="head">
       <div class="head-container">
         <div class="logo-left">
-          <img src="/top_.png" alt="">
+          <img src="../static/top_.png" alt="">
         </div>
         <div class="head-index">
           <TitleBox />
@@ -69,7 +69,7 @@
 
   @font-face {
     font-family: YuGothic;
-    src: url('/YuGothic.ttf');
+    src: url('../static/YuGothic.ttf');
   }
 
   html {

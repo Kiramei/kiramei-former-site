@@ -3,7 +3,7 @@
     <div class="scrollbar"></div>
     <div class="scroll-panel-container">
       <div class="logo-before">
-        <img src="/top_1.png" alt="">
+        <img src="../static/top_1.png" alt="">
       </div>
       <div class="main-content">
         <div class="tip-before">
@@ -80,7 +80,7 @@
             <vue-masonry-wall :items="imgs" :options="{width: 300,padding: {}}">
               <template v-slot:default="{item}">
                 <div class="Item">
-                  <img :src="item.url" alt="" @click="toggle(item.url)">
+                  <img :src="'../static/'+item.url" alt="" @click="toggle('../static/'+item.url)">
                 </div>
               </template>
             </vue-masonry-wall>
@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="logo-after">
-        <img src="/top_1.png" alt="">
+        <img src="../static/top_1.png" alt="">
       </div>
     </div>
   </div>
@@ -110,10 +110,10 @@
       }
     },
     created() {
-      axios('/news_list.json').then(response => this.news = response.data);
-      axios('/music_list.json').then(response => this.musics = response.data);
-      axios('/movie_list.json').then(response => this.movies = response.data);
-      axios('/img_list.json').then(response => this.imgs = response.data);
+      axios('../static/news_list.json').then(response => this.news = response.data);
+      axios('../static/music_list.json').then(response => this.musics = response.data);
+      axios('../static/movie_list.json').then(response => this.movies = response.data);
+      axios('../static/img_list.json').then(response => this.imgs = response.data);
     },
     methods: {
       select(event) {
