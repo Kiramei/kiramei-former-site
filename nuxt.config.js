@@ -25,7 +25,7 @@ export default {
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
-      href: '/favicon.ico'
+      href: 'https://raw.githubusercontent.com/Kiramei/test-vue/main/favicon.ico'
     }]
   },
 
