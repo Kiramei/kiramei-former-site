@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="content-loader">
-    	<img src="../static/logo.png" draggable="false" alt="" />
+      <img src="../static/logo.png" draggable="false" alt="" />
     </div>
     <div class="content-mask">
     </div>
@@ -31,23 +31,23 @@
 
 <script>
   function lastSet() {
-  	setTimeout(function() {
-  		fadeOut(document.querySelector(".content-loader"), 10);
-  		fadeOut(document.querySelector(".content-mask"), 5);
-  	}, 900);
+    setTimeout(function() {
+      fadeOut(document.querySelector(".content-loader"), 10);
+      fadeOut(document.querySelector(".content-mask"), 5);
+    }, 900);
   }
 
   function fadeOut(element, spd) {
-  	var speed = spd;
-  	var num = 100;
-  	var st = setInterval(function() {
-  		num--;
-  		element.style.opacity = num / 100;
-  		if (num <= 0) {
-  			clearInterval(st);
-  			element.style.display = "none";
-  		}
-  	}, speed);
+    var speed = spd;
+    var num = 100;
+    var st = setInterval(function() {
+      num--;
+      element.style.opacity = num / 100;
+      if (num <= 0) {
+        clearInterval(st);
+        element.style.display = "none";
+      }
+    }, speed);
   }
 
   export default {
@@ -59,7 +59,7 @@
       }
     },
     mounted() {
-      lastSet();
+      window.onload = lastSet();
     }
   }
 </script>
@@ -185,77 +185,76 @@
   }
 
   .beian {
-  	display: block;
-  	position: absolute;
-  	bottom: 0;
-  	left: 0;
-  	width: calc(100% - 20px);
-  	height: 30px;
-  	text-align: right;
-  	z-index: 100000;
-  	line-height: 30px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    height: 30px;
+    text-align: right;
+    z-index: 100000;
+    line-height: 30px;
   }
 
-.content-loader {
-	width: 20%;
-	position: fixed;
-	_position: absolute;
-  top: calc( 45% - 28px );
-  left: calc( 50% - 113px );
-	z-index: 999;
-	-webkit-animation: blink 1.5s ease-in-out infinite alternate;
-	-moz-animation: blink 1.5s ease-in-out infinite alternate;
-	animation: blink 1.5s ease-in-out infinite alternate
-}
+  .content-loader {
+    width: 20%;
+    position: fixed;
+    _position: absolute;
+    top: calc(45% - 28px);
+    left: calc(50% - 113px);
+    z-index: 999;
+    -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+    -moz-animation: blink 1.5s ease-in-out infinite alternate;
+    animation: blink 1.5s ease-in-out infinite alternate
+  }
 
-.content-loader img {
-	width: 225px;
-}
+  .content-loader img {
+    width: 225px;
+  }
 
 
 
-.content-mask {
-	background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	width: 100%;
-	height: 100%;
-	background: white no-repeat fixed center center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 998
-}
+  .content-mask {
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    height: 100%;
+    background: white no-repeat fixed center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998
+  }
 
-@-webkit-keyframes blink {
-	0% {
-		opacity: 0
-	}
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 0
+    }
 
-	100% {
-		opacity: 1
-	}
-}
+    100% {
+      opacity: 1
+    }
+  }
 
-@-moz-keyframes blink {
-	0% {
-		opacity: 0
-	}
+  @-moz-keyframes blink {
+    0% {
+      opacity: 0
+    }
 
-	100% {
-		opacity: 1
-	}
-}
+    100% {
+      opacity: 1
+    }
+  }
 
-@keyframes blink {
-	0% {
-		opacity: 0
-	}
+  @keyframes blink {
+    0% {
+      opacity: 0
+    }
 
-	100% {
-		opacity: 1
-	}
-}
-
+    100% {
+      opacity: 1
+    }
+  }
 </style>
