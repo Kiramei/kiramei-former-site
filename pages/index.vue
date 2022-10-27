@@ -30,25 +30,7 @@
 </template>
 
 <script>
-  function lastSet() {
-    setTimeout(function() {
-      fadeOut(document.querySelector(".content-loader"), 10);
-      fadeOut(document.querySelector(".content-mask"), 5);
-    }, 900);
-  }
 
-  function fadeOut(element, spd) {
-    var speed = spd;
-    var num = 100;
-    var st = setInterval(function() {
-      num--;
-      element.style.opacity = num / 100;
-      if (num <= 0) {
-        clearInterval(st);
-        element.style.display = "none";
-      }
-    }, speed);
-  }
 
   export default {
     name: 'IndexPage',
@@ -57,9 +39,6 @@
         isShow: false,
         currentImg: ''
       }
-    },
-    mounted() {
-      window.onload = lastSet();
     }
   }
 </script>
