@@ -1,6 +1,6 @@
 <template>
   <div  class="background">
-  	<img id="t" src="/bk.webp" alt="" />
+  	<img id="t" src="../static/bk.webp" alt="" />
   </div>
 </template>
 
