@@ -80,7 +80,7 @@
             <vue-masonry-wall :items="imgs" :options="{width: 300,padding: {}}">
               <template v-slot:default="{item}">
                 <div class="Item">
-                  <img :src="'../static/'+item.url" alt="" @click="toggle('../static/'+item.url)">
+                  <img :src="item.url" alt="" @click="toggle(item.url)">
                 </div>
               </template>
             </vue-masonry-wall>
