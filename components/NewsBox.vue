@@ -17,13 +17,7 @@
 
 <style>
   .news-panel {
-    padding: 80px 80px 95px 80px;
-    margin: 0 0 0 150px;
-    font-weight: 500;
-    border-radius: 4px;
-    background: rgba(30, 30, 30, 0.2);
-    padding: 80px 80px 95px 80px;
-    margin: 0 0 0 150px;
+    padding: 7% 7% 8% 7%;
     font-weight: 500;
     border-radius: 4px;
     background: rgba(30, 30, 30, 0.2);
@@ -35,6 +29,7 @@
   .news-content{
     font-size: 20px;
     margin-top: 45px;
+    border-radius: 4px;
   }
   .news-date{
     font-size: 18px;

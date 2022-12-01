@@ -4,7 +4,17 @@
       <slot name="title" />
     </div>
     <a :href="$attrs.url" download>
-      <div class="download-button">Download</div>
+      <div class="download-button">
+        <svg t="1667121626545" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="4867" width="25" height="25">
+          <path
+            d="M505.7 661c3.2 4.1 9.4 4.1 12.6 0l112-141.7c4.1-5.2 0.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8z"
+            p-id="4868"></path>
+          <path
+            d="M878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
+            p-id="4869"></path>
+        </svg>
+      </div>
     </a>
   </div>
 </template>
@@ -14,7 +24,6 @@
 
 <style>
   .music-box {
-    font-size: 18px;
     margin-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -26,23 +35,33 @@
   }
 
   .music-title {
-    padding: 8px 24px 8px 24px;
+    padding: 8px 24px 8px 1%;
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 4%;
   }
 
   .download-button {
-    border-radius: 20px;
+    border-radius: 100%;
     color: white;
-    padding: 8px 24px 8px 24px;
+    padding: 8px 10px 8px 10px;
     background: #efefef22;
     display: inline-block;
     float: right;
-    transition: ease .3s;
-    margin-right: 5%
+    transition: ease .2s;
+    margin-right: 5%;
+    margin-top: -2px;
   }
-  
-  .down:active {
-  	background: #6E696D;
+
+  .download-button:active {
+    fill: #000;
+    background: #6E696D;
+  }
+
+  .download-button:hover {
+    background-color: #00000044;
+  }
+
+  svg {
+    fill: #fff;
   }
 </style>

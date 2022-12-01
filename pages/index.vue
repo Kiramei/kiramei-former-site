@@ -25,20 +25,28 @@
         <img :src="currentImg" alt="" @click="isShow=false">
       </div>
     </div>
-    <div class="beian"><a href="http://beian.miit.gov.cn/" target="_blank">沪ICP备20005789号</a></div>
+    <div class="beian">
+      <a href="http://beian.miit.gov.cn/" target="_blank">沪ICP备20005789号</a>
+    </div>
+
   </div>
 </template>
 
 <script>
-
-
   export default {
     name: 'IndexPage',
     data() {
       return {
         isShow: false,
-        currentImg: ''
+        currentImg: '',
+        lang: 0
       }
+    },
+    mounted() {
+      var lang=0;
+      if (typeof(this.$cookies.get("lang")) === 'undefined') this.$cookies.set("lang", lang);
+      else this.lang = this.$cookies.get('lang');
+
     }
   }
 </script>
@@ -70,6 +78,11 @@
 
   a {
     color: #ffeaea;
+    transition: 0.2s ease;
+  }
+
+  a:hover {
+    color: #74aeec;
   }
 
   ul {
@@ -191,8 +204,6 @@
     width: 225px;
   }
 
-
-
   .content-mask {
     background-size: cover;
     -moz-background-size: cover;
@@ -236,4 +247,13 @@
       opacity: 1
     }
   }
+
+  .aplayer-list-light {
+    color: #000;
+  }
+
+  .aplayer-list ol li:hover{
+    color: #000;
+  }
+
 </style>

@@ -7,11 +7,11 @@
       </div>
       <div class="main-content">
         <div class="tip-before">
-          Scroll To See More<br />|
+          詳細をスクロール<br />|
         </div>
         <div class="tip-unit">
           <div class="tip-title">
-            News
+            活動
           </div>
         </div>
         <div class="content-news">
@@ -29,7 +29,7 @@
         </div>
         <div class="tip-unit">
           <div class="tip-title">
-            Musics
+            音楽
           </div>
         </div>
         <div class="content-music">
@@ -44,16 +44,14 @@
           </div>
           <div class="music-controller">
             <client-only>
-                           <APlayer style="background:#00000055;color: #fff;" listMaxHeight='120px' theme="pic" repeat="list"
+              <APlayer style="background:#00000055;color: #fff;" listMaxHeight='120px' theme="#000000aa" repeat="list"
                 :music='musics[0]' :list='musics' />
-
             </client-only>
-
           </div>
         </div>
         <div class="tip-unit">
           <div class="tip-title">
-            Video
+            動画
           </div>
         </div>
         <div class="content-video">
@@ -72,13 +70,13 @@
         </div>
         <div class="tip-unit">
           <div class="tip-title">
-            Gallery
+            イラスト
           </div>
         </div>
         <div class="content-gallery">
           <div class="image-container">
-            <vue-masonry-wall :items="imgs" :options="{width: 300,padding: {}}">
-              <template v-slot:default="{item}">
+            <vue-masonry-wall :items="imgs" :options="{ width: 300, padding: {} }">
+              <template v-slot:default="{ item }">
                 <div class="Item">
                   <img :src="item.url" alt="" @click="toggle(item.url)">
                 </div>
@@ -94,7 +92,6 @@
   </div>
 </template>
 <script>
-  import axios from 'axios';
   import VueMasonryWall from "vue-masonry-wall";
 
   export default {
@@ -112,9 +109,6 @@
     },
     beforeMount() {
       this.$options.components.APlayer = () => import('vue-aplayer');
-    },
-    mounted() {
-      console.log(this.data)
     },
     components: {
       VueMasonryWall
@@ -156,7 +150,8 @@
             "content": "｢光は遠い」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/toi.zip\">ここをクリックしてダウンロードしください</a>",
             "date": "—————— 2020/2/10"
           },
-          {
+      
+   {
             "title": "音楽プラットフォームの紹介",
             "content": "僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！",
             "date": "—————— 2020/1/26"
@@ -251,60 +246,18 @@
           }
         ],
         imgs: [{
-            "url": "bg1.webp"
-          },
-          {
-            "url": "bg2.webp"
-          },
-          {
-            "url": "bg3.webp"
-          },
-          {
-            "url": "bg4.webp"
-          },
-          {
-            "url": "bg5.webp"
-          },
-          {
-            "url": "bg6.webp"
-          },
-          {
-            "url": "bg7.webp"
-          },
-          {
-            "url": "bg8.webp"
-          },
-          {
-            "url": "bg9.webp"
-          },
-          {
-            "url": "bg10.webp"
-          },
-          {
-            "url": "bg11.webp"
-          },
-          {
-            "url": "bg12.webp"
-          },
-          {
-            "url": "bg13.webp"
-          },
-          {
-            "url": "bg14.webp"
-          },
-          {
-            "url": "bg15.webp"
-          },
-          {
-            "url": "bg16.webp"
-          }, {
-            "url": "bk.webp"
-          }
-        ],
+          "url": "webp/bk.webp"
+        }],
         currentUrl: "",
         currentImg: "",
         open: false
       }
+    },
+    created() {
+      for (var i = 1; i <= 47; i++)
+        this.imgs.push({
+          "url": "webp/bg (" + i + ").webp"
+        })
     }
   }
 </script>
@@ -329,8 +282,8 @@
   .logo-before {
     position: relative;
     z-index: 10;
-    left: 45vw;
-    top: 30vh;
+    left: calc(50% - 73px);
+    top: calc(45% - 91px);
   }
 
   .logo-before img {
@@ -340,9 +293,9 @@
   .logo-after {
     position: relative;
     z-index: 10;
-    left: 45vw;
+    left: calc(50% - 73px);
     top: calc(120% + 3000px);
-    padding-bottom: 20%;
+    height: 66%;
   }
 
   .logo-after img {
@@ -384,7 +337,7 @@
   .content-news {
     width: 80%;
     height: 422px;
-    margin: 80px 0% 80px 5%;
+    margin: 80px 0% 80px 10%;
     margin-bottom: 129px;
     border: #ffffff;
     overflow: auto;
@@ -480,5 +433,9 @@
 
   .Item img:hover {
     opacity: 1;
+  }
+
+  .aplayer-list-light {
+    color: #000;
   }
 </style>

@@ -32,7 +32,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{src:'plugin/last.js' ,ssr:false} ],
+  plugins: [{src:'plugin/last.js' ,ssr:false} ,{src:'plugin/common.js' ,ssr:false} ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,7 +41,9 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [ 'cookie-universal-nuxt',['cookie-universal-nuxt', {
+      parseJSON: true
+    }] ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
