@@ -43,10 +43,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "16"
-
-      - name: Build Nuxt site
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
-
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
